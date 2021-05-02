@@ -47,7 +47,48 @@ class BMIcalculator extends State<BMIcalculator>{
       appBar: new AppBar(backgroundColor: Colors.purple [800], title: new Text("BMI Calculator"),),
       body: new ListView(
         padding: const EdgeInsets.all(3.5),
+        children: <Widget>[
+          new Image.asset("images/download (2).png", height: 120.0 , width: 150.0,),
+          new Container(color: Colors.grey[100], padding: const EdgeInsets.all(5.0),
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new TextField(
+                controller: _ageFieldController,
+                keyboardType: TextInputType.number,
+                decoration: new InputDecoration(
+                  labelText: "Enter Age",
+                  icon: new Icon(Icons.calendar_today),
+                ),
+              ),
+              new TextField(
+                controller: _heightFieldController,
+                keyboardType: TextInputType.number,
+                decoration: new InputDecoration(
+                  labelText: "Height in feet",
+                  icon: new Icon(Icons.info),
+                ),
+              ),
+              new TextField(
+                controller: _weightFieldController,
+                keyboardType: TextInputType.number,
+                decoration: new InputDecoration(
+                  labelText: "Weight in pounds",
+                  icon: new Icon(Icons.shutter_speed),
+                )
+              ),
+              new Padding(padding: const EdgeInsets.all(7.5)),
+              new RaisedButton(onPressed: _calculatorBMI,
+              child: new Text("CALCULATE",
+              style: new TextStyle(fontWeight: FontWeight.bold),),
+                color: Colors.purple [800],
+                textColor: Colors.white,
+              )
+            ],
+          ),
+          ),
 
+        ],
       ),
     );
   }
