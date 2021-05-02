@@ -5,12 +5,12 @@ class BMIcalculator extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return new BMIcalculator();
+    return new BMIState();
   }
 
 }
 
-class BMIcalculator extends State<BMIcalculator>{
+class BMIState extends State<BMIcalculator>{
   double _calculation;
   String _calResult;
   String _result;
@@ -87,7 +87,25 @@ class BMIcalculator extends State<BMIcalculator>{
             ],
           ),
           ),
-
+          new Padding(padding: const EdgeInsets.all(5.5)),
+          new Container(
+            alignment: Alignment.topCenter,
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new  Text(_calResult != null ? "$_calResult" : "",
+                style: new TextStyle(
+                  color: Colors.pink,
+                  fontSize: 44.5,
+                  fontWeight: FontWeight.w800
+                ),),
+                new Text(_result != null ? _result : "" ,
+                style: new TextStyle(
+                  fontSize: 28.0
+                ),)
+              ],
+            ),
+          )
         ],
       ),
     );
